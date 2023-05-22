@@ -1,0 +1,33 @@
+<html>
+    <head>
+      
+         <body>
+          <style href="style.css"></style>
+         <!-- <p> 
+            Enter Custom File Folder Name:
+         </p> -->
+         <form action="action2.php" method="post" class="content">
+         Upload here: <input type="file" name="image"/><br>
+     <input type="submit"/><br>
+</form>
+        </body>
+    </head>
+
+
+<script>
+    var ckname1 = "save_name";
+    var days=10;
+    var save_name= prompt("Enter Custom Folder Name here!");
+    //cookies
+    if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toGMTString();
+  }
+  else {
+    expires = "";
+  }
+  
+  document.cookie = escape(ckname1) + "=" + save_name + expires + "; path=/";
+</script>    
+</html>
